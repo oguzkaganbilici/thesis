@@ -1,4 +1,3 @@
-from audios import download_videos
 from audio_to_peaks import audio2peaks
 from fingerprints import fingerprints,create_hash_table
 from find_offsets import find_offsett
@@ -8,18 +7,6 @@ from segments_to_label import segments2label
 import numpy as np
 
 np.random.seed(100)
-
-DOWNLOADS = [
-    {
-        "url": "https://www.youtube.com/watch?v=oic1W5ZriQE",
-        "outputname": "full_match"
-    },
-    {
-        "url": "https://www.youtube.com/watch?v=LnKrnoMjqVw",
-        "outputname": "highlights"
-    }
-]
-# download_videos(DOWNLOADS)
 
 fm_peaks, fullMatch_length = audio2peaks("full_match.wav", n_fft=512, 
                        hop_length=128, size = 40, th= -25)
