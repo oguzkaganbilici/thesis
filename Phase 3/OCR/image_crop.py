@@ -1,11 +1,11 @@
 import numpy
 import cv2
 
-def crop(img_path, x: list, y: list):
-    img = cv2.imread(img_path)
+def crop(img, x: list, y: list):
+    # img = cv2.imread(img_path)
 
-    if img is None:
-        raise FileNotFoundError(f"Görüntü bulunamadı: {img_path}")
+    # if img is None:
+    #     raise FileNotFoundError(f"Görüntü bulunamadı: {img_path}")
 
     H, W = img.shape[:2]
 

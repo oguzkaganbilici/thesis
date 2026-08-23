@@ -1,18 +1,15 @@
-from image_crop import crop
-from binarization import binarization
-from regex import regex
+from scene_detect import get_scene_frames
+from read_clocks import read_all_clocks
+from grouping import group_positions
+from labelling import generate_labels
+import numpy as np
+
+VIDEO_PATH = "/Users/oguzkaganbilici/Desktop/OCR/liverpool-real-madrid-hl.mp4"
 
 X = [0.06, 0.13] # hesaplanmıs bir oran
 Y = [0.05, 0.11] # hesaplanmıs bir oran
 
+frames  = get_scene_frames(VIDEO_PATH)
+clocks = read_all_clocks(frames, X, Y)
+labels = generate_labels(clocks, offsets=260, path="liverpool-real-madrid.mp4")
 
-for i in range(0, 9):
-    image_path = f"frames/full/fp_seg{i}.png"
-
-
-    clock = crop(image_path, x=X, y=Y)
-
-    binary, ret = binarization(clock)
-
-    saniye = regex(binary=binary)
-    print(f"{i}. png - saniye: ", saniye)
