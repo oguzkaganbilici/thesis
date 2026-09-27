@@ -8,3 +8,8 @@ original_repo/
 .vscode/
 frames/
 *.png
+*.npy
+*.h5
+*.mp4
+transcript_*.json
+videos/
