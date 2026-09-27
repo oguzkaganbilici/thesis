@@ -6,3 +6,5 @@ checkpoint/
 outputs/
 original_repo/
 .vscode/
+frames/
+*.png
